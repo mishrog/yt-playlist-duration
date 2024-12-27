@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "YT Playlist Duration",
+    "version": "1.0",
+    "icons": {
+        "16": "images/icon.png",
+        "128": "images/icon.png"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://youtube.com/playlist/?*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/icon.png",
+            "128": "images/icon.png"
+        }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.youtube.com/playlist?*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
